@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "order-management-api"
+version = "0.1.0"
+description = "Flask + PostgreSQL order management service"
+authors = []
+readme = "README.md"
+packages = [{ include = "app" }]
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.11"
+flask = "*"
+gunicorn = "*"
+sqlalchemy = "*"
+psycopg2-binary = "*"
+alembic = "*"
+geoalchemy2 = "*"
+retrying = "^1.4.2"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "*"
+pytest-flask = "*"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

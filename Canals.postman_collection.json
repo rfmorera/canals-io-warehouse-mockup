@@ -1,0 +1,175 @@
+{
+  "info": {
+    "_postman_id": "c87ce405-e835-47fe-84d3-3c0e0af97254",
+    "name": "Canals",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "9165615"
+  },
+  "item": [
+    {
+      "name": "Succesffuly create",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"customer_id\": \"cust_001\",\n    \"shipping_address\": \"123 Main St, New York, NY\",\n    \"items\": [\n      { \"product_id\": \"bbbbbbbb-0001-0001-0001-000000000001\", \"quantity\": 2 }\n    ]\n  }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/orders",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "orders"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Declined Card",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"customer_id\": \"declined_customer\",\n    \"shipping_address\": \"123 Main St, New York, NY\",\n    \"items\": [\n      { \"product_id\": \"bbbbbbbb-0001-0001-0001-000000000001\", \"quantity\": 2 }\n    ]\n  }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/orders",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "orders"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "No Payment method",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"customer_id\": \"no_payment_customer\",\n    \"shipping_address\": \"123 Main St, New York, NY\",\n    \"items\": [\n      { \"product_id\": \"bbbbbbbb-0001-0001-0001-000000000001\", \"quantity\": 2 }\n    ]\n  }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/orders",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "orders"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Empty Item list",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n      \"customer_id\": \"cust-004\",\n      \"shipping_address\": \"123 Main St, Chicago, IL 60601\",\n      \"items\": []\n    }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/orders",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "orders"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Only US Manufactered - Failed",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n      \"customer_id\": \"cust-003\",\n      \"shipping_address\": \"900 Wilshire Blvd, Los Angeles, CA 90017\",\n      \"items\": [\n        {\"product_id\": \"bbbbbbbb-0001-0001-0001-000000000001\", \"quantity\": 1},\n        {\"product_id\": \"bbbbbbbb-0002-0001-0001-000000000002\", \"quantity\": 1} // Germany Product\n      ],\n      \"manufacturer_countries\": [\"US\"]\n    }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/orders",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "orders"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
